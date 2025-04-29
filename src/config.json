@@ -1,0 +1,22 @@
+{
+    "Nodes": [
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.pressure",
+            "Name": "Pressure",
+            "StartValue": 10.5,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.speed",
+            "Name": "Speed",
+            "StartValue": 100,
+            "DataType": "Integer"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.switch",
+            "Name": "Switch",
+            "StartValue": true,
+            "DataType": "Boolean"
+        }
+    ]
+}

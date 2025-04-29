@@ -1,0 +1,8 @@
+services:
+  data_generator:
+    build:
+        dockerfile: ./../opc_data_generator/Dockerfile
+    container_name: opc_data_generator
+    restart: on-failure
+    ports:
+      - "4840:4840"
