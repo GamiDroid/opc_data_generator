@@ -38,7 +38,7 @@ async def main():
 
         # Create node variable
         node = await myobj.add_variable(ns, name, start)
-        node.set_writable()
+        await node.set_writable()
         opcs.append({"node": node, "DataType": data_type})
 
     _logger.info("Starting server!")
