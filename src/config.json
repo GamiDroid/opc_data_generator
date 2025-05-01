@@ -17,6 +17,13 @@
             "Name": "Switch",
             "StartValue": true,
             "DataType": "Boolean"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.MES_Heartbeat",
+            "Name": "MES_Heartbeat",
+            "StartValue": true,
+            "DataType": "Integer",
+            "Mode": "WRITE"
         }
     ]
 }

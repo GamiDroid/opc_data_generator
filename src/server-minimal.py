@@ -28,18 +28,19 @@ async def main():
     # populating our address space
     myobj = await server.nodes.objects.add_object(idx, "MyObject")
 
-    # Create nodes list that stores both the variable node and its data type.
+    # Create nodes list that stores the variable node, its data type, and mode.
     opcs = []
     for nodeConfig in config['Nodes']:
         ns = nodeConfig['Namespace']
         name = nodeConfig.get("Name", "MyVariable")
         start = nodeConfig["StartValue"]
         data_type = nodeConfig.get("DataType", "Double")  # Default to Double if not specified
+        mode = nodeConfig.get("Mode", "READ")  # Default to READ if not specified
 
         # Create node variable
         node = await myobj.add_variable(ns, name, start)
         await node.set_writable()
-        opcs.append({"node": node, "DataType": data_type})
+        opcs.append({"node": node, "DataType": data_type, "Mode": mode})
 
     _logger.info("Starting server!")
     async with server:
@@ -48,6 +49,11 @@ async def main():
             for item in opcs:
                 node = item["node"]
                 data_type = item["DataType"]
+                mode = item["Mode"].lower()
+
+                # If mode is WRITE, skip updates.
+                if mode == "write":
+                    continue
 
                 current_value = await node.get_value()
                 new_val = current_value  # default
