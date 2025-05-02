@@ -1,29 +1,394 @@
 {
     "Nodes": [
         {
-            "Namespace": "ns=2;s=freeopcua.Tags.pressure",
-            "Name": "Pressure",
-            "StartValue": 10.5,
-            "DataType": "Double"
-        },
-        {
-            "Namespace": "ns=2;s=freeopcua.Tags.speed",
-            "Name": "Speed",
-            "StartValue": 100,
-            "DataType": "Integer"
-        },
-        {
-            "Namespace": "ns=2;s=freeopcua.Tags.switch",
-            "Name": "Switch",
-            "StartValue": true,
+            "Namespace": "ns=2;s=freeopcua.Tags.ToMES_MESControlOn",
+            "Name": "ToMES_MESControlOn",
+            "StartValue": false,
             "DataType": "Boolean"
         },
         {
-            "Namespace": "ns=2;s=freeopcua.Tags.MES_Heartbeat",
-            "Name": "MES_Heartbeat",
-            "StartValue": true,
-            "DataType": "Integer",
-            "Mode": "WRITE"
+            "Namespace": "ns=2;s=freeopcua.Tags.ToMES_ReadyForChangeOver",
+            "Name": "ToMES_ReadyForChangeOver",
+            "StartValue": false,
+            "DataType": "Boolean"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.ToMES_ChangeOverNotPossible",
+            "Name": "ToMES_ChangeOverNotPossible",
+            "StartValue": false,
+            "DataType": "Boolean"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.ToMES_ChangeOverActive",
+            "Name": "ToMES_ChangeOverActive",
+            "StartValue": false,
+            "DataType": "Boolean"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.ToMES_ChangeOverCompleted",
+            "Name": "ToMES_ChangeOverCompleted",
+            "StartValue": false,
+            "DataType": "Boolean"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.ToMES_ActiveFormatName",
+            "Name": "ToMES_ActiveFormatName",
+            "StartValue": "",
+            "DataType": "String"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.ToMES_ActiveFormatID",
+            "Name": "ToMES_ActiveFormatID",
+            "StartValue": 0,
+            "DataType": "Integer"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.ToMES_GripperPressureNotSet",
+            "Name": "ToMES_GripperPressureNotSet",
+            "StartValue": false,
+            "DataType": "Boolean"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.ToMES_ActiveMessage",
+            "Name": "ToMES_ActiveMessage",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.ToMES_OMAC_State",
+            "Name": "ToMES_OMAC_State",
+            "StartValue": 0,
+            "DataType": "Integer"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.TotalCaseBatchQty",
+            "Name": "TotalCaseBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.TotalCaseBatchProgress",
+            "Name": "TotalCaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed1_CaseBatchQty",
+            "Name": "Infeed1_CaseBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed1_ProductBatchQty",
+            "Name": "Infeed1_ProductBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed1_CaseBatchProgress",
+            "Name": "Infeed1_CaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed1_ProductBatchProgress",
+            "Name": "Infeed1_ProductBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed2_CaseBatchQty",
+            "Name": "Infeed2_CaseBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed2_ProductBatchQty",
+            "Name": "Infeed2_ProductBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed2_CaseBatchProgress",
+            "Name": "Infeed2_CaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed2_ProductBatchProgress",
+            "Name": "Infeed2_ProductBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed3_CaseBatchQty",
+            "Name": "Infeed3_CaseBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed3_ProductBatchQty",
+            "Name": "Infeed3_ProductBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed3_CaseBatchProgress",
+            "Name": "Infeed3_CaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed3_ProductBatchProgress",
+            "Name": "Infeed3_ProductBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed4_CaseBatchQty",
+            "Name": "Infeed4_CaseBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed4_ProductBatchQty",
+            "Name": "Infeed4_ProductBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed4_CaseBatchProgress",
+            "Name": "Infeed4_CaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed4_ProductBatchProgress",
+            "Name": "Infeed4_ProductBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed5_CaseBatchQty",
+            "Name": "Infeed5_CaseBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed5_ProductBatchQty",
+            "Name": "Infeed5_ProductBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed5_CaseBatchProgress",
+            "Name": "Infeed5_CaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed5_ProductBatchProgress",
+            "Name": "Infeed5_ProductBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed6_CaseBatchQty",
+            "Name": "Infeed6_CaseBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed6_ProductBatchQty",
+            "Name": "Infeed6_ProductBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed6_CaseBatchProgress",
+            "Name": "Infeed6_CaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed6_ProductBatchProgress",
+            "Name": "Infeed6_ProductBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed7_CaseBatchQty",
+            "Name": "Infeed7_CaseBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed7_ProductBatchQty",
+            "Name": "Infeed7_ProductBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed7_CaseBatchProgress",
+            "Name": "Infeed7_CaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed7_ProductBatchProgress",
+            "Name": "Infeed7_ProductBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed8_CaseBatchQty",
+            "Name": "Infeed8_CaseBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed8_ProductBatchQty",
+            "Name": "Infeed8_ProductBatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed8_CaseBatchProgress",
+            "Name": "Infeed8_CaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Infeed8_ProductBatchProgress",
+            "Name": "Infeed8_ProductBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.F4_401_CaseBatchProgress",
+            "Name": "F4_401_CaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.F4_402_CaseBatchProgress",
+            "Name": "F4_402_CaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.F4_403_CaseBatchProgress",
+            "Name": "F4_403_CaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.F4_404_CaseBatchProgress",
+            "Name": "F4_404_CaseBatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Erecting_BatchQty",
+            "Name": "Erecting_BatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Erecting_BatchProgress",
+            "Name": "Erecting_BatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Filling_BatchQty",
+            "Name": "Filling_BatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Filling_BatchProgress",
+            "Name": "Filling_BatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Closing_BatchQty",
+            "Name": "Closing_BatchQty",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Closing_BatchProgress",
+            "Name": "Closing_BatchProgress",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.ProducedQuantityLastBatch",
+            "Name": "ProducedQuantityLastBatch",
+            "StartValue": 0.0,
+            "DataType": "Double"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.HMI_Message",
+            "Name": "HMI_Message",
+            "StartValue": "",
+            "DataType": "String"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Gripper1_Setting",
+            "Name": "Gripper1_Setting",
+            "StartValue": 0,
+            "DataType": "Integer"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Gripper2_Setting",
+            "Name": "Gripper2_Setting",
+            "StartValue": 0,
+            "DataType": "Integer"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Gripper3_Setting",
+            "Name": "Gripper3_Setting",
+            "StartValue": 0,
+            "DataType": "Integer"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Gripper4_Setting",
+            "Name": "Gripper4_Setting",
+            "StartValue": 0,
+            "DataType": "Integer"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Gripper1_AtmPressure",
+            "Name": "Gripper1_AtmPressure",
+            "StartValue": 0,
+            "DataType": "Integer"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Gripper2_AtmPressure",
+            "Name": "Gripper2_AtmPressure",
+            "StartValue": 0,
+            "DataType": "Integer"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Gripper3_AtmPressure",
+            "Name": "Gripper3_AtmPressure",
+            "StartValue": 0,
+            "DataType": "Integer"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.Gripper4_AtmPressure",
+            "Name": "Gripper4_AtmPressure",
+            "StartValue": 0,
+            "DataType": "Integer"
+        },
+        {
+            "Namespace": "ns=2;s=freeopcua.Tags.ToMES_ProductUpsideDown",
+            "Name": "ToMES_ProductUpsideDown",
+            "StartValue": false,
+            "DataType": "Boolean"
         }
     ]
 }
