@@ -1,6 +1,13 @@
 {
     "Nodes": [
         {
+            "Namespace": "ns=2;s=freeopcua.Tags.MES_Heartbeat",
+            "Name": "MES_Heartbeat",
+            "StartValue": 0,
+            "DataType": "Integer",
+            "Mode": "WRITE"
+        },
+        {
             "Namespace": "ns=2;s=freeopcua.Tags.ToMES_MESControlOn",
             "Name": "ToMES_MESControlOn",
             "StartValue": false,

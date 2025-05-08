@@ -78,15 +78,19 @@ async def main():
                         new_val = not current_value
                     else:
                         new_val = current_value
+                        
+                elif data_type.lower() == "string":
+                    # generate a random 6-character string
+                    new_val = ''.join(random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZ") for _ in range(6))
 
                 else:
                     _logger.warning("Unknown DataType '%s' for node %s", data_type, node)
                     continue
 
-                _logger.info("Set value of %s (type: %s) to %s", node, data_type, new_val)
+                # _logger.info("Set value of %s (type: %s) to %s", node, data_type, new_val)
                 await node.write_value(new_val)
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG)
-    asyncio.run(main(), debug=True)
+    logging.basicConfig(level=logging.INFO)
+    asyncio.run(main(), debug=False)
