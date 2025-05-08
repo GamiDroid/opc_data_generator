@@ -25,6 +25,15 @@ async def main():
     int_min = -1
     int_max = 1
 
+    # Mapping from our config type to asyncua VariantTypes.
+    datatype_mapping = {
+        "boolean": ua.VariantType.Boolean,
+        "int32": ua.VariantType.Int32,
+        "int64": ua.VariantType.Int64,
+        "double": ua.VariantType.Double,
+        "string": ua.VariantType.String
+    }
+
     # populating our address space
     myobj = await server.nodes.objects.add_object(idx, "MyObject")
 
@@ -35,10 +44,14 @@ async def main():
         name = nodeConfig.get("Name", "MyVariable")
         start = nodeConfig["StartValue"]
         data_type = nodeConfig.get("DataType", "Double")  # Default to Double if not specified
+
+        # Allow override of the default variant type.
+        variant = datatype_mapping.get(data_type.lower(), ua.VariantType.Double)
+        
         mode = nodeConfig.get("Mode", "READ")  # Default to READ if not specified
 
-        # Create node variable
-        node = await myobj.add_variable(ns, name, start)
+        # Create node variable with the correct variant type.
+        node = await myobj.add_variable(ns, name, start, varianttype=variant)
         await node.set_writable()
         opcs.append({"node": node, "DataType": data_type, "Mode": mode})
 
@@ -67,10 +80,17 @@ async def main():
                     elif new_val < 0.0:
                         new_val = 0.0
 
-                elif data_type.lower() == "integer":
+                elif data_type.lower() == "int32":
                     random_offset = random.randint(int_min, int_max)
-                    new_val = current_value + random_offset
-                    # optionally: add clamping logic if necessary
+                    new_val = int(current_value + random_offset)
+                    # wrap the value as a Variant with type Int32
+                    new_val = ua.Variant(new_val, ua.VariantType.Int32)
+
+                elif data_type.lower() == "int64":
+                    random_offset = random.randint(int_min, int_max)
+                    new_val = int(current_value + random_offset)
+                    # wrap the value as a Variant with type Int64
+                    new_val = ua.Variant(new_val, ua.VariantType.Int64)
 
                 elif data_type.lower() == "boolean":
                     # randomly toggle boolean (50% chance)
@@ -93,4 +113,4 @@ async def main():
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    asyncio.run(main(), debug=False)
+    asyncio.run(main(), debug=True)

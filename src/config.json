@@ -4,7 +4,7 @@
             "Namespace": "ns=2;s=freeopcua.Tags.MES_Heartbeat",
             "Name": "MES_Heartbeat",
             "StartValue": 0,
-            "DataType": "Integer",
+            "DataType": "Int32",
             "Mode": "WRITE"
         },
         {
@@ -47,7 +47,7 @@
             "Namespace": "ns=2;s=freeopcua.Tags.ToMES_ActiveFormatID",
             "Name": "ToMES_ActiveFormatID",
             "StartValue": 0,
-            "DataType": "Integer"
+            "DataType": "Int32"
         },
         {
             "Namespace": "ns=2;s=freeopcua.Tags.ToMES_GripperPressureNotSet",
@@ -65,7 +65,7 @@
             "Namespace": "ns=2;s=freeopcua.Tags.ToMES_OMAC_State",
             "Name": "ToMES_OMAC_State",
             "StartValue": 0,
-            "DataType": "Integer"
+            "DataType": "Int32"
         },
         {
             "Namespace": "ns=2;s=freeopcua.Tags.TotalCaseBatchQty",
@@ -347,49 +347,49 @@
             "Namespace": "ns=2;s=freeopcua.Tags.Gripper1_Setting",
             "Name": "Gripper1_Setting",
             "StartValue": 0,
-            "DataType": "Integer"
+            "DataType": "Int32"
         },
         {
             "Namespace": "ns=2;s=freeopcua.Tags.Gripper2_Setting",
             "Name": "Gripper2_Setting",
             "StartValue": 0,
-            "DataType": "Integer"
+            "DataType": "Int32"
         },
         {
             "Namespace": "ns=2;s=freeopcua.Tags.Gripper3_Setting",
             "Name": "Gripper3_Setting",
             "StartValue": 0,
-            "DataType": "Integer"
+            "DataType": "Int32"
         },
         {
             "Namespace": "ns=2;s=freeopcua.Tags.Gripper4_Setting",
             "Name": "Gripper4_Setting",
             "StartValue": 0,
-            "DataType": "Integer"
+            "DataType": "Int32"
         },
         {
             "Namespace": "ns=2;s=freeopcua.Tags.Gripper1_AtmPressure",
             "Name": "Gripper1_AtmPressure",
             "StartValue": 0,
-            "DataType": "Integer"
+            "DataType": "Int32"
         },
         {
             "Namespace": "ns=2;s=freeopcua.Tags.Gripper2_AtmPressure",
             "Name": "Gripper2_AtmPressure",
             "StartValue": 0,
-            "DataType": "Integer"
+            "DataType": "Int32"
         },
         {
             "Namespace": "ns=2;s=freeopcua.Tags.Gripper3_AtmPressure",
             "Name": "Gripper3_AtmPressure",
             "StartValue": 0,
-            "DataType": "Integer"
+            "DataType": "Int32"
         },
         {
             "Namespace": "ns=2;s=freeopcua.Tags.Gripper4_AtmPressure",
             "Name": "Gripper4_AtmPressure",
             "StartValue": 0,
-            "DataType": "Integer"
+            "DataType": "Int32"
         },
         {
             "Namespace": "ns=2;s=freeopcua.Tags.ToMES_ProductUpsideDown",
