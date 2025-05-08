@@ -14,9 +14,11 @@ docker compose up --build -d
 ### Configure nodes
 
 Supported data types: 
- - Double
- - Integer 
  - Boolean
+ - Int32
+ - Int64 
+ - Double
+ - String
 
 ```json
 {
